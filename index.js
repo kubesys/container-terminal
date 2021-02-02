@@ -23,7 +23,7 @@ var server = require('http').Server(app);
 
 app.use(express.static('public'));
 
-server.listen(7002, function() {
+server.listen(process.env.port, function() {
     console.log((new Date()) + ' Server is listening on port 7002');
 });
 

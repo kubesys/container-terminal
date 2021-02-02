@@ -31,7 +31,7 @@
                 kubernetesContainerSocketProvider.WebSocketFactory = "CustomWebSockets";
             })
             .run(function($rootScope) {
-                $rootScope.baseUrl = "ws://localhost:7002";
+                $rootScope.baseUrl = "ws://" + process.env.host + ":" + process.env.port;
                 $rootScope.selfLink = "/";
                 $rootScope.preventSocket = true;
             })
@@ -39,7 +39,7 @@
             .factory("CustomWebSockets", function($rootScope) {
                 return function CustomWebSocket(url, protocols) {
                     url = $rootScope.baseUrl + url;
-                    return new WebSocket('ws://localhost:7002/', 'echo-protocol');
+                    return new WebSocket('ws://' + process.env.host + ':' + process.env.port, 'echo-protocol');
                 };
             });
     </script>
