@@ -26,12 +26,13 @@
     <script src="bower_components/kubernetes-container-terminal/dist/container-terminal.js"></script>
 
     <script type="text/javascript">
+    console.log(process.env)
         angular.module('k8sTerminal', ['kubernetesUI'])
             .config(function(kubernetesContainerSocketProvider) {
                 kubernetesContainerSocketProvider.WebSocketFactory = "CustomWebSockets";
             })
             .run(function($rootScope) {
-                $rootScope.baseUrl = "ws://" + process.env.host + ":" + process.env.port;
+                $rootScope.baseUrl = "ws://localhost:31052";
                 $rootScope.selfLink = "/";
                 $rootScope.preventSocket = true;
             })

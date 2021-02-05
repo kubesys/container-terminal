@@ -24,7 +24,7 @@ var server = require('http').Server(app);
 app.use(express.static('public'));
 
 server.listen(process.env.port, function() {
-    console.log((new Date()) + ' Server is listening on port 7002');
+    console.log((new Date()) + ' Server is listening on port 7002' + process.env.port);
 });
 
 wsServer = new WebSocketServer({
