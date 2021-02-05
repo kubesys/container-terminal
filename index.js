@@ -1,8 +1,8 @@
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 // defined k8x configuration
-const token = process.env.token;
-const host = "wss://" + process.env.host + process.env.port;
+const token = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImVDUzZnUkJ2OHI0VVA2VWpkdU1SLWNXTlF4aEhLQjNyamU2ZHhsd014cWMifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJrdWJlcm5ldGVzLWNsaWVudC10b2tlbi16ZGxyZiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJrdWJlcm5ldGVzLWNsaWVudCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6ImJlZGJjMGUzLWJjNDAtNGQ2Zi1iMTAxLTk3ODkzOGZjYTZhNyIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTprdWJlcm5ldGVzLWNsaWVudCJ9.Qmfmf4QwubartSyLJqIW2gXHdlyKlqQsNknIVtRNjfaydw6qCa8XuGS6egqPwiN-Al8GaoGuVflyJy-bolj-aVWY-a-9fWUB0itV4SdYTNeQV5hYv6sbhnuvSo3nHp2jyZjlRyvEQNxKyQaJF6eodJPjgzCVoj8BhsSqTu7vbzCTEMEnIz8AMGJLF9G6JuffBTpO83Ch_hVbquQnKQJjK60911D-5S6SD3SilQyk_WdYblorxbRXsSm8VNkHz6BWrfa7uCDcw46XnfVVuCyRKOGmIAeIWIDq2uaI6nECkcujWCCwYzEePq-SsXU4MRwFAYd-Rdt9Q8JUw9njR0I-5A";
+const host = "wss://" + process.env.host + "31052";
 //const namespace = 'kube-system';
 //const pod = 'kube-api-mapper-578b4644cd-q4lgw';
 const container = '';
@@ -23,8 +23,8 @@ var server = require('http').Server(app);
 
 app.use(express.static('public'));
 
-server.listen(process.env.port, function() {
-    console.log((new Date()) + ' Server is listening on port ' + process.env.port);
+server.listen(31052, function() {
+    console.log((new Date()) + ' Server is listening on port 31052');
     //console.log(process.env.host)
 });
 
@@ -66,7 +66,7 @@ wsServer.on('request', function(request) {
 
     // 處理由 web socket client 收到的訊息轉發 k8s exec api
     connection.on('message', function(message) {
-        //console.log(message.utf8Data);
+        console.log(message.utf8Data);
         if(message.utf8Data.substring(0, 1) == "6") {
             console.log(message.utf8Data.substring(1))
             var query = message.utf8Data.substring(1)
