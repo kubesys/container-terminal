@@ -2,7 +2,7 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 // defined k8x configuration
 const token = process.env.token;
-const host = "wss://" + process.env.host + ":6443";
+const host = "wss://" + process.env.host + process.env.port;
 //const namespace = 'kube-system';
 //const pod = 'kube-api-mapper-578b4644cd-q4lgw';
 const container = '';
@@ -24,7 +24,8 @@ var server = require('http').Server(app);
 app.use(express.static('public'));
 
 server.listen(process.env.port, function() {
-    console.log((new Date()) + ' Server is listening on port 7002' + process.env.port);
+    console.log((new Date()) + ' Server is listening on port ' + process.env.port);
+    //console.log(process.env.host)
 });
 
 wsServer = new WebSocketServer({
