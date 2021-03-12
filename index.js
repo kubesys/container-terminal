@@ -1,7 +1,7 @@
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 // defined k8x configuration
-const token = "";
+const token = process.env.token;
 const host = "wss://" + process.env.host + "6443";
 //const namespace = 'kube-system';
 //const pod = 'kube-api-mapper-578b4644cd-q4lgw';

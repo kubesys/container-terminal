@@ -39,7 +39,7 @@
             .factory("CustomWebSockets", function($rootScope) {
                 return function CustomWebSocket(url, protocols) {
                     url = $rootScope.baseUrl + url;
-                    return new WebSocket('ws://39.106.40.190:31052', 'echo-protocol');
+                    return new WebSocket('ws://119.8.188.235:31052', 'echo-protocol');
                 };
             });
     </script>
