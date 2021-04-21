@@ -17,20 +17,21 @@ exec websocket连接的协议是以下两种类型之一：
 
 
 ## 代码结构
-
-container-terminal<br>
-├─.gitignore<br>
-├─Dockerfile<br>
-├─README.md<br>
-├─index.js<br>
-├─package-lock.json<br>
-├─package.json<br>
-├─replace.build.js<br>
-├─start.sh<br>
-├─public<br>
-|   └index.html<br>
-├─example<br>
-|    └web-k8s-exec.png<br>
+```
+container-terminal
+├─.gitignore
+├─Dockerfile
+├─README.md
+├─index.js
+├─package-lock.json
+├─package.json
+├─replace.build.js
+├─start.sh
+├─public
+|   └index.html
+├─example
+|    └web-k8s-exec.png
+```
 
 ## 部署方式
 
