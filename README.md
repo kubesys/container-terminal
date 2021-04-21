@@ -4,7 +4,7 @@
 
 ## 技术架构
 
-![Alt Screenshot](https://github.com/kubesys/container-terminal/example/架构1.png)
+![Alt Screenshot](https://github.com/kubesys/container-terminal/raw/master/example/架构1.png)
 
 ## 技术特色
 
@@ -12,24 +12,25 @@
 exec websocket连接的协议是以下两种类型之一：
 * channel.k8s.io - 使用0-3作为读写通道标识符
 * base64.channel.k8s.io - 同上       
+
 通道0是STDIN, 1是STDOUT, 2是STDERR (if TTY is not requested), and 3 是特殊错误通道. 服务器从STDIN读, 往其他三种写。
 
 
 ## 代码结构
 
-container-terminal
-├─.gitignore
-├─Dockerfile
-├─README.md
-├─index.js
-├─package-lock.json
-├─package.json
-├─replace.build.js
-├─start.sh
-├─public
-|   └index.html
-├─example
-|    └web-k8s-exec.png
+container-terminal<br>
+├─.gitignore<br>
+├─Dockerfile<br>
+├─README.md<br>
+├─index.js<br>
+├─package-lock.json<br>
+├─package.json<br>
+├─replace.build.js<br>
+├─start.sh<br>
+├─public<br>
+|   └index.html<br>
+├─example<br>
+|    └web-k8s-exec.png<br>
 
 ## 部署方式
 
