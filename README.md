@@ -5,6 +5,8 @@
 ## 技术架构
 
 ![Alt Screenshot](https://github.com/kubesys/container-terminal/raw/master/example/架构1.png)
+架构包括三个部分：浏览器端，websocket client端，websocket server端（即k8s api实际执行端）   
+websocket client端接收浏览器传递端数据，转发到server端，server端执行结果返回给浏览器端
 
 ## 技术特色
 
@@ -45,7 +47,6 @@ sh start.sh
 ```
 docker run -d --restart=always --net=host -e "host=39.106.40.190:" -e "token=xxx" registry.cn-beijing.aliyuncs.com/dosproj/container-terminal:v1.1.0-amd64
 ```
-
-Screenshot
+界面
 ![Alt Screenshot](https://github.com/samejack/web-k8s-exec/raw/master/example/web-k8s-exec.png)
 
